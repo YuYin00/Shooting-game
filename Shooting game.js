@@ -65,7 +65,7 @@ function scoreboard() {
 
 //计算分数
 function countScore(monster) {
-    if (monster.data - hit === true) {
+    if (monster.hit === true) {
         if (monster === monster1) {
             score += 10;
         } else if (monster === monster2) {
