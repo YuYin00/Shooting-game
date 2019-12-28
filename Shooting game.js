@@ -25,7 +25,7 @@ let wrapper = document.querySelector('.wrapper'),
     rule = document.querySelector('.rule'),
     ruleDetails = document.querySelector('.ruleDetails');
 
-//规则
+//规则和规则详情
 rule.addEventListener('click', event => {
     event.stopPropagation();
     ruleDetails.style.display = 'block';
