@@ -1,24 +1,39 @@
 let wrapper = document.querySelector('.wrapper'),
-
+    //按键
     startBtn = document.querySelector('.start'),
     stopBtn = document.querySelector('.stop'),
     continueBtn = document.querySelector('.continue'),
     againBtn = document.querySelector('.again'),
-
+    // 飞机
     plane = document.querySelector('.plane'),
     touchPlane,
     mousePlane,
+    // 子弹
     bullets = document.querySelectorAll('.bullet'),
     findBullets,
     shootBullets,
-
+    // 怪兽和道具
     monsters = document.querySelectorAll('.monster'),
     monsterInit,
     monsterMove,
     explode = document.querySelector('.explode'),
     cane = document.querySelector('.cane'),
+    // 分数
     score = 0,
-    scoreAll = document.querySelector('.scoreAll');
+    scoreAll = document.querySelector('.scoreAll'),
+    // 规则
+    rule = document.querySelector('.rule'),
+    ruleDetails = document.querySelector('.ruleDetails');
+
+//规则
+rule.addEventListener('click', event => {
+    event.stopPropagation();
+    ruleDetails.style.display = 'block';
+})
+
+wrapper.addEventListener('click', () => {
+    ruleDetails.style.display = 'none';
+})
 
 // 开始游戏
 startBtn.addEventListener('click', () => {
@@ -27,6 +42,8 @@ startBtn.addEventListener('click', () => {
     startBtn.style.display = 'none';
     stopBtn.style.display = 'block';
     plane.style.display = 'block';
+    document.querySelector('.score').style.display = 'block';
+    rule.style.display = 'none';
 });
 
 //暂停游戏
@@ -63,18 +80,33 @@ function scoreboard() {
     document.querySelector('.score').innerText = `得分：${+score}`;
 }
 
-//计算分数
-function countScore(monster) {
-
-    if (monster.hit === true) {
-        if (monster === monster1) {
+//计算击中分数
+function countShoot(monster) {
+    if (monster.getAttribute('data-hit') !== 'true') {
+        monster.setAttribute('data-hit', 'true');
+        if (monster.classList.contains('monster1')) {
             score += 10;
-        } else if (monster === monster2) {
+        } else if (monster.classList.contains('monster2')) {
             score += 1;
-        } else if (monster === monster3) {
+        } else if (monster.classList.contains('monster3')) {
             score += 5;
-        } else if (monster === cane) {
-            score += 20;
+        } else if (monster.classList.contains('cane')) {
+            score -= 20;
+        } else if (monster.classList.contains('explode')) {
+            score -= 15;
+        }
+    }
+    return score;
+}
+
+//计算道具分数
+function countProp(prop) {
+    if (monster.getAttribute('data-hit') !== 'true') {
+        prop.setAttribute('data-hit', 'true');
+        if (prop.classList.contains('cane')) {
+            score += 40;
+        } else if (prop.classList.contains('explode')) {
+            score += 30;
         }
     }
     return score;
@@ -107,9 +139,8 @@ function shootBullet() {
                 monster.style.fontSize = '55px';
                 hideMonster(monster);
                 bullet.style.top = '-100px';
-                monster.setAttribute('data-hit', true);
-                //增加分数
-                countScore(monster);
+                //计算分数
+                countShoot(monster);
                 scoreboard();
 
                 break;
@@ -121,11 +152,13 @@ function shootBullet() {
                         bombMonster(monster);
                         hideMonster(monster);
                         bullet.style.top = '-100px';
-                        monster.setAttribute('data-hit', true);
-                        //增加分数
-                        countScore(monster);
+                        //计算分数
+                        countShoot(monster);
                         scoreboard();
                     }
+                    //计算分数
+                    countProp(explode);
+                    scoreboard();
                 }
             }
             break;
@@ -142,9 +175,8 @@ function shootBullet() {
                     bullet.innerText = '🌙';
                 }
             }, 3000);
-            cane.setAttribute('data-hit', true);
-            //增加分数
-            countScore(cane);
+            //计算分数
+            countProp(cane);
             scoreboard();
 
             break;
@@ -158,6 +190,7 @@ function shootBullet() {
             plane.classList.add('afertPlane');
             againBtn.style.display = 'block';
             stop();
+            //分数板
             scoreAll.style.display = 'block';
             scoreAll.innerText = `总得分:${+score}`;
             document.querySelector('.score').style.display = 'none';
@@ -180,7 +213,8 @@ function hideMonster(monster) {
         monster.style.top = '-1000px';
         monster.style.background = null;
         const maxLeft = wrapper.offsetWidth - monster.offsetWidth;
-        monster.style.left = _.random(0, maxLeft) + 'px';
+        monster.style.left = _.random(0, maxLeft) + 'px'
+        monster.removeAttribute('data-hit');
     }, 300);
 }
 
