@@ -278,6 +278,11 @@ body {
 .ruleDetails {
     width: 220px;
     height: 420px;
+}
+
+.ruleDetails {
+    width: 220px;
+    height: 420px;
     border: rebeccapurple solid 3px;
     background: #fff;
     position: absolute;
