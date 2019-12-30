@@ -1,0 +1,290 @@
+body {
+    margin: 0;
+}
+
+::selection {
+    background-color: transparent;
+}
+
+.wrapper {
+    width: 100vw;
+    height: 100vh;
+    background: url(./背景.jpeg);
+    animation: bg 9s linear infinite;
+    position: relative;
+}
+
+@keyframes bg {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 0 2046px;
+    }
+}
+
+
+/* 开始 */
+
+.start {
+    width: 120px;
+    height: 60px;
+    background: rgb(250, 212, 218);
+    color: purple;
+    font-size: 20px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-weight: 600;
+    position: absolute;
+    top: 50%;
+    margin-top: -30px;
+    left: 50%;
+    margin-left: -60px;
+}
+
+.start:hover {
+    border: 5px solid pink;
+}
+
+.start:active {
+    color: rgb(158, 9, 245);
+}
+
+
+/* 暂停 */
+
+.stop {
+    width: 40px;
+    height: 40px;
+    font-size: 25px;
+    color: hotpink;
+    background: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: none;
+}
+
+
+/* 继续 */
+
+.continue {
+    width: 120px;
+    height: 60px;
+    background: rgb(250, 212, 218);
+    color: purple;
+    font-size: 20px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-weight: 600;
+    position: absolute;
+    top: 50%;
+    margin-top: -30px;
+    left: 50%;
+    margin-left: -60px;
+    display: none;
+}
+
+.continue:hover {
+    border: 5px solid pink;
+}
+
+.continue:active {
+    color: rgb(158, 9, 245);
+}
+
+
+/* 再来一次 */
+
+.again {
+    width: 120px;
+    height: 60px;
+    background: rgb(250, 212, 218);
+    color: purple;
+    font-size: 20px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-weight: 600;
+    position: absolute;
+    top: 50%;
+    margin-top: -10px;
+    left: 50%;
+    margin-left: -60px;
+    display: none;
+}
+
+.again:hover {
+    border: 5px solid pink;
+}
+
+.again:active {
+    color: rgb(158, 9, 245);
+}
+
+
+/* 飞机 */
+
+.plane {
+    width: 75px;
+    height: 75px;
+    background: url(./水冰月.png);
+    background-size: 100%;
+    position: absolute;
+    bottom: 50px;
+    left: calc(50% - 75px / 2);
+    cursor: grab;
+    display: none;
+}
+
+.plane:active {
+    cursor: grabbing;
+}
+
+.afertPlane {
+    background: url(./水冰月哭了.png);
+    background-size: 100%;
+}
+
+
+/* 子弹 */
+
+.bullet {
+    height: 30px;
+    width: 30px;
+    font-size: 25px;
+    position: absolute;
+    top: -40px;
+    left: -40px;
+}
+
+
+/* 怪兽 */
+
+.monster1 {
+    background: url(./怪兽2.png);
+    background-size: 100%;
+    width: 35px;
+    height: 35px;
+}
+
+.monster2 {
+    background: url(./怪兽.png);
+    background-size: 100%;
+    width: 25px;
+    height: 25px;
+}
+
+.monster3 {
+    background: url(./怪兽3.png);
+    background-size: 100%;
+    width: 25px;
+    height: 25px;
+}
+
+.monster {
+    position: absolute;
+    top: -40px;
+    left: -40px;
+    transition: font-size .3s;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+
+/* 爆炸变身器 */
+
+.explode {
+    background: url(./变身器.png);
+    background-size: 100%;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: -50px;
+    left: -50px;
+}
+
+
+/* 手杖魔法棒 */
+
+.cane {
+    background: url(./魔法棒.png);
+    background-size: 100%;
+    width: 40px;
+    height: 70px;
+    position: absolute;
+    top: -80px;
+    left: -50px;
+}
+
+
+/* 得分 */
+
+.score {
+    height: 23px;
+    padding-left: 5px;
+    color: mediumslateblue;
+    font-weight: 600;
+    display: none;
+}
+
+
+/* 总分数 */
+
+.scoreAll {
+    width: 117px;
+    height: 147px;
+    background: url(./分数.jpg) no-repeat 0 0/100%;
+    position: absolute;
+    top: 50%;
+    margin-top: -175px;
+    left: 50%;
+    margin-left: -62px;
+    border-radius: 20px;
+    line-height: 25px;
+    border: rgb(236, 131, 236) solid 3px;
+    color: rgb(214, 65, 214);
+    display: none;
+    text-indent: .5em;
+    font-weight: 600;
+}
+
+
+/* 规则和规则详情 */
+
+.rule {
+    color: rgb(207, 7, 207);
+    width: 60px;
+    height: 30px;
+    font-size: 16px;
+    background: transparent;
+    outline: none;
+    cursor: pointer;
+    font-weight: 500;
+    margin-top: 5px;
+    line-height: 30px;
+}
+
+.ruleDetails {
+    width: 200px;
+    height: 400px;
+    border: rebeccapurple solid 3px;
+    background: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -201.5px 0 0 -101.5px;
+    padding: 0 8px;
+    color: slateblue;
+    font-weight: 500;
+    display: none;
+}
