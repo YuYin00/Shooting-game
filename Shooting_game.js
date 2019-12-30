@@ -33,6 +33,13 @@ rule.addEventListener('click', event => {
 
 wrapper.addEventListener('click', () => {
     ruleDetails.style.display = 'none';
+    // 点击全屏
+    document.documentElement.requestFullscreen();
+})
+
+// 禁止页面拖动
+wrapper.addEventListener('touchmove', function(e) {
+    e.preventDefault();
 })
 
 // 开始游戏

@@ -16,6 +16,7 @@ body {
     background: url(./bg.jpeg);
     animation: bg 6s linear infinite;
     position: relative;
+    overflow: hidden;
 }
 
 .wrapper:-webkit-full-screen {
@@ -51,6 +52,7 @@ body {
     margin-top: -30px;
     left: 50%;
     margin-left: -60px;
+    white-space: nowrap;
 }
 
 .start:hover {
@@ -77,6 +79,7 @@ body {
     top: 0;
     right: 0;
     display: none;
+    white-space: nowrap;
 }
 
 
@@ -99,6 +102,7 @@ body {
     left: 50%;
     margin-left: -60px;
     display: none;
+    white-space: nowrap;
 }
 
 .continue:hover {
@@ -129,6 +133,7 @@ body {
     left: 50%;
     margin-left: -60px;
     display: none;
+    white-space: nowrap;
 }
 
 .again:hover {
