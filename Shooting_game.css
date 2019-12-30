@@ -263,7 +263,7 @@ body {
 
 .rule {
     color: rgb(207, 7, 207);
-    width: 60px;
+    width: 80px;
     height: 30px;
     font-size: 16px;
     background: transparent;
@@ -272,17 +272,18 @@ body {
     font-weight: 500;
     margin-top: 5px;
     line-height: 30px;
+    border: none;
 }
 
 .ruleDetails {
-    width: 200px;
-    height: 400px;
+    width: 220px;
+    height: 420px;
     border: rebeccapurple solid 3px;
     background: #fff;
     position: absolute;
     top: 50%;
     left: 50%;
-    margin: -201.5px 0 0 -101.5px;
+    margin: -210px 0 0 -110px;
     padding: 0 8px;
     color: slateblue;
     font-weight: 500;
