@@ -9,7 +9,7 @@ body {
 .wrapper {
     width: 100vw;
     height: 100vh;
-    background: url(./背景.jpeg);
+    background: url(./bg.jpeg);
     animation: bg 9s linear infinite;
     position: relative;
 }
@@ -136,7 +136,7 @@ body {
 .plane {
     width: 75px;
     height: 75px;
-    background: url(./水冰月.png);
+    background: url(./plane.png);
     background-size: 100%;
     position: absolute;
     bottom: 50px;
@@ -150,7 +150,7 @@ body {
 }
 
 .afertPlane {
-    background: url(./水冰月哭了.png);
+    background: url(./plane1.png);
     background-size: 100%;
 }
 
@@ -170,21 +170,21 @@ body {
 /* 怪兽 */
 
 .monster1 {
-    background: url(./怪兽2.png);
+    background: url(./monster1.png);
     background-size: 100%;
     width: 35px;
     height: 35px;
 }
 
 .monster2 {
-    background: url(./怪兽.png);
+    background: url(./monster2.png);
     background-size: 100%;
     width: 25px;
     height: 25px;
 }
 
 .monster3 {
-    background: url(./怪兽3.png);
+    background: url(./monster3.png);
     background-size: 100%;
     width: 25px;
     height: 25px;
@@ -204,7 +204,7 @@ body {
 /* 爆炸变身器 */
 
 .explode {
-    background: url(./变身器.png);
+    background: url(./explode.png);
     background-size: 100%;
     width: 50px;
     height: 50px;
@@ -217,7 +217,7 @@ body {
 /* 手杖魔法棒 */
 
 .cane {
-    background: url(./魔法棒.png);
+    background: url(./cane.png);
     background-size: 100%;
     width: 40px;
     height: 70px;
@@ -243,7 +243,7 @@ body {
 .scoreAll {
     width: 117px;
     height: 147px;
-    background: url(./分数.jpg) no-repeat 0 0/100%;
+    background: url(./score.jpg) no-repeat 0 0/100%;
     position: absolute;
     top: 50%;
     margin-top: -175px;
