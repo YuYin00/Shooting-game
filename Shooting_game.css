@@ -6,11 +6,15 @@ body {
     background-color: transparent;
 }
 
+:hover {
+    -webkit-tap-highlight-color: transparent;
+}
+
 .wrapper {
     width: 100vw;
     height: 100vh;
     background: url(./bg.jpeg);
-    animation: bg 9s linear infinite;
+    animation: bg 6s linear infinite;
     position: relative;
 }
 
@@ -19,7 +23,7 @@ body {
         background-position: 0 0;
     }
     to {
-        background-position: 0 2046px;
+        background-position: 0 1332px;
     }
 }
 
